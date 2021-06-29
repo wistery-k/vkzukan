@@ -78,7 +78,7 @@ export const UNITS: Unit[] = [
     u('Citrin', [YELLOW, FORTUNE]),
     u('Eleschal', [PURPLE, FOOL]),
     u('Kokyou', [BLACK, PLUM]),
-    u('Spesa', [ORANGE, ORANGE]),
+    u('Spesa', [ORANGE, STAR]),
     u('Jade', [GREEN, MOON]),
     u('Libyan', [YELLOW, WOODS]),
     u('Dumol', [BLUE, HUNGEDMAN]),
