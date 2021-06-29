@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { RANDOM_COLOR, RANDOM_NONCOLOR, RED, SYMBOLS, UNITS } from "./Units";
+import { RANDOM_COLOR, RANDOM_NONCOLOR, SYMBOLS, UNITS } from "./Units";
 
 function App() {
   const [selectedSymbols, setSelectedSymbols] = useState<string[]>([
@@ -23,7 +23,7 @@ function App() {
           return (
             <img
               style={{ opacity }}
-              src={`/img/symbol_icon_${symbol}.png`}
+              src={`/vkzukan/img/symbol_icon_${symbol}.png`}
               onClick={() => addOrRemoveSymbol(symbol)}
             />
           );
@@ -33,7 +33,7 @@ function App() {
         {UNITS.map(
           (unit) =>
             unit.symbols.some((symbol) => selectedSymbols.includes(symbol)) && (
-              <img src={`/img/icon_unit_H_${unit.name}.png`} />
+              <img src={`/vkzukan/img/icon_unit_H_${unit.name}.png`} />
             )
         )}
       </div>
