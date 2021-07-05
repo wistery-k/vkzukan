@@ -10,9 +10,12 @@ export const ActiveSymbolList = (props: Props) => {
     <div>
       {SYMBOLS.map((symbol) => {
         return (
-          <span style={{ display: "inline-block" }}>
+          <span key={symbol} style={{ display: "inline-block" }}>
             <div>
-              <img src={`/vkzukan/img/symbol_icon_${symbol}.png`} />
+              <img
+                alt={symbol}
+                src={`/vkzukan/img/symbol_icon_${symbol}.png`}
+              />
             </div>
             <div>
               {

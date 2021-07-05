@@ -115,3 +115,7 @@ export const UNITS: Unit[] = [
     u('Topaz', [YELLOW, TOWER]),
     u('Peridot', [GREEN, MAGICIAN]),
 ];
+
+export function parseUnit(str: string): Unit | undefined {
+    return UNITS.find((u) => u.name === str);
+}
