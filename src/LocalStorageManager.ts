@@ -17,3 +17,21 @@ export function saveSelectedSymbols(key: string, symbols: string[]) {
 export function loadSelectedSymbols(key: string): string[] {
     return window.localStorage.getItem('selectedSymbols-' + key)?.split(',') ?? [];
 }
+
+export function saveSymbolWidth(width: number) {
+    window.localStorage.setItem('symbolWidth', `${width}`);
+}
+
+export function loadSymbolWidth(defaultWidth: number): number {
+    const widthStr = window.localStorage.getItem('symbolWidth');
+    return widthStr == null ? defaultWidth : parseInt(widthStr);
+}
+
+export function saveUnitWidth(width: number) {
+    window.localStorage.setItem('unitWidth', `${width}`);
+}
+
+export function loadUnitWidth(defaultWidth: number) {
+    const widthStr = window.localStorage.getItem('unitWidth');
+    return widthStr == null ? defaultWidth : parseInt(widthStr);
+}

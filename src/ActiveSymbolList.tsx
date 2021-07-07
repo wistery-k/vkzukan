@@ -3,11 +3,12 @@ import { SYMBOLS, Unit } from "./Units";
 
 type Props = {
   upgradedUnits: Unit[];
+  symbolWidth: number;
 };
 
 export const ActiveSymbolList = (props: Props) => {
   return (
-    <div>
+    <span>
       {SYMBOLS.map((symbol) => {
         return (
           <span key={symbol} style={{ display: "inline-block" }}>
@@ -15,6 +16,7 @@ export const ActiveSymbolList = (props: Props) => {
               <img
                 alt={symbol}
                 src={`/vkzukan/img/symbol_icon_${symbol}.png`}
+                width={props.symbolWidth}
               />
             </div>
             <div>
@@ -26,6 +28,6 @@ export const ActiveSymbolList = (props: Props) => {
           </span>
         );
       })}
-    </div>
+    </span>
   );
 };

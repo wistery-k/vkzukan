@@ -9,6 +9,9 @@ type Props = {
   title: string;
   upgradedUnits: Unit[];
   onUnitClick: (unit: Unit) => void;
+  symbolWidth: number;
+  unitImageWidth: number;
+  highlightedSymbol: string | null;
 };
 
 export const FilteredGemList = (props: Props) => {
@@ -39,6 +42,7 @@ export const FilteredGemList = (props: Props) => {
               style={{ opacity }}
               src={`/vkzukan/img/symbol_icon_${symbol}.png`}
               alt={symbol}
+              width={props.symbolWidth}
               onClick={() => addOrRemoveSymbol(symbol)}
             />
           );
@@ -50,13 +54,22 @@ export const FilteredGemList = (props: Props) => {
             selectedSymbols.includes(symbol)
           );
           const opacity = props.upgradedUnits.includes(unit) ? 0.2 : 1;
+          const backgroundColor =
+            props.highlightedSymbol != null &&
+            unit.symbols.includes(props.highlightedSymbol)
+              ? "white"
+              : "";
           return (
             <img
               key={unit.name}
-              style={{ display: show ? "inline-block" : "none", opacity }}
+              style={{
+                display: show ? "inline-block" : "none",
+                opacity,
+                backgroundColor,
+              }}
               src={`/vkzukan/img/icon_unit_H_${unit.name}.png`}
               alt={unit.name}
-              width="64px"
+              width={props.unitImageWidth}
               onClick={() => props.onUnitClick(unit)}
             />
           );
