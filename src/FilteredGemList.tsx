@@ -35,11 +35,17 @@ export const FilteredGemList = (props: Props) => {
       <div>{props.title}</div>
       <div>
         {SYMBOLS.map((symbol) => {
-          const opacity = selectedSymbols.includes(symbol) ? 1 : 0.2;
+          const boxShadow = selectedSymbols.includes(symbol)
+            ? "0px 0 2px 2px white"
+            : "0px 0 2px 2px rgba(0,0,0,0)";
+          const style = {
+            boxShadow,
+            borderRadius: "50%",
+          };
           return (
             <img
               key={symbol}
-              style={{ opacity }}
+              style={style}
               src={`/vkzukan/img/symbol_icon_${symbol}.png`}
               alt={symbol}
               width={props.symbolWidth}
