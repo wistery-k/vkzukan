@@ -76,6 +76,8 @@ function App() {
       <ActiveSymbolList
         upgradedUnits={upgradedUnits}
         symbolWidth={symbolWidth}
+        onMouseOver={setHighlightedSymbol}
+        onMouseOut={() => setHighlightedSymbol(null)}
       />
       <button onClick={() => setUpgradedUnits([])}>リセット</button>
       <hr />

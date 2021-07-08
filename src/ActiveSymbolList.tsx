@@ -4,6 +4,8 @@ import { SYMBOLS, Unit } from "./Units";
 type Props = {
   upgradedUnits: Unit[];
   symbolWidth: number;
+  onMouseOver: (symbol: string) => void;
+  onMouseOut: (symbol: string) => void;
 };
 
 export const ActiveSymbolList = (props: Props) => {
@@ -17,6 +19,8 @@ export const ActiveSymbolList = (props: Props) => {
                 alt={symbol}
                 src={`/vkzukan/img/symbol_icon_${symbol}.png`}
                 width={props.symbolWidth}
+                onMouseOver={() => props.onMouseOver(symbol)}
+                onMouseOut={() => props.onMouseOut(symbol)}
               />
             </div>
             <div>
