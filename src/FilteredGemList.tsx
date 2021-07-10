@@ -41,6 +41,7 @@ export const FilteredGemList = (props: Props) => {
           const style = {
             boxShadow,
             borderRadius: "50%",
+            verticalAlign: "middle",
           };
           return (
             <img
@@ -53,6 +54,12 @@ export const FilteredGemList = (props: Props) => {
             />
           );
         })}
+        <button
+          style={{ verticalAlign: "middle" }}
+          onClick={() => setSelectedSymbols([])}
+        >
+          リセット
+        </button>
       </div>
       <div>
         {UNITS.map((unit) => {
